@@ -1,9 +1,14 @@
 public class Main{
     public static void main(String[] args) {
-        DoubleEndedLinkedList myList = new DoubleEndedLinkedList();
+        DoubleEndedLinkedList<Integer> myIntList = new DoubleEndedLinkedList<Integer>();
         for(int i = 0; i<10;i++){
-            myList.insertLast(i+1);
+            myIntList.insertLast(i+1);
         }
-        myList.printList();
+        myIntList.printList();
+        DoubleEndedLinkedList<String> myStringList = new DoubleEndedLinkedList<String>();
+        myStringList.insertLast("Hello");
+        myStringList.insertLast("Bonjour");
+        myStringList.insertLast("Hallo");
+        myStringList.printList();
     }
 }

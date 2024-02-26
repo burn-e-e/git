@@ -1,32 +1,32 @@
-public class DoublyLinkedListNode {
-    protected int data;
-    protected DoublyLinkedListNode next,prev;
+public class DoublyLinkedListNode<T> {
+    protected T data;
+    protected DoublyLinkedListNode<T> next,prev;
     public DoublyLinkedListNode(){
         next = null;
         prev = null;
-        data = 0;
+        data = null;
     }
-    public DoublyLinkedListNode(int d, DoublyLinkedListNode n, DoublyLinkedListNode p){
+    public DoublyLinkedListNode(T d, DoublyLinkedListNode<T> n, DoublyLinkedListNode<T> p){
         data = d;
         next = n;
         prev = p;
     }
-    public void setLinkNext(DoublyLinkedListNode n){
+    public void setLinkNext(DoublyLinkedListNode<T> n){
         next = n;
     }
-    public void setLinkPrev(DoublyLinkedListNode p){
+    public void setLinkPrev(DoublyLinkedListNode<T> p){
         prev = p;
     }
-    public DoublyLinkedListNode getLinkNext(){
+    public DoublyLinkedListNode<T> getLinkNext(){
         return next;
     }
-    public DoublyLinkedListNode getLinkPrev(){
+    public DoublyLinkedListNode<T> getLinkPrev(){
         return prev;
     }
-    public void setData(int d){
+    public void setData(T d){
         data = d;
     }
-    public int getData(){
+    public T getData(){
         return data;
     }
 }

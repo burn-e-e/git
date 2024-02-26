@@ -1,8 +1,8 @@
-    public class DoubleEndedLinkedList extends DoublyLinkedListNode{
-        private DoublyLinkedListNode head;
-        private DoublyLinkedListNode tail;
-        public void insertLast(int value){
-            DoublyLinkedListNode newNode = new DoublyLinkedListNode();
+    public class DoubleEndedLinkedList<T> extends DoublyLinkedListNode<T>{
+        private DoublyLinkedListNode<T> head;
+        private DoublyLinkedListNode<T> tail;
+        public void insertLast(T value){
+            DoublyLinkedListNode<T> newNode = new DoublyLinkedListNode<T>();
             newNode.setData(value);
             if (isEmpty()) {
                 head = newNode;
@@ -12,16 +12,16 @@
                 tail = newNode;
             }
         }
-        public DoublyLinkedListNode deleteLast(){
+        public DoublyLinkedListNode<T> deleteLast(){
             if (isEmpty()) {
                 return null;
             }
-            DoublyLinkedListNode deletedNode = tail;
+            DoublyLinkedListNode<T> deletedNode = tail;
             if (head == tail) {
                 head = null;
                 tail = null;
             }else{
-                DoublyLinkedListNode pred = head;
+                DoublyLinkedListNode<T> pred = head;
                 while (pred.next != tail) {
                     pred = pred.next;
                 }
@@ -34,7 +34,7 @@
             return head == null;
         }
         public void printList() {
-            DoublyLinkedListNode temp = head;
+            DoublyLinkedListNode<T> temp = head;
             while (temp != null) {
                 System.out.print(temp.getData() + " ");
                 temp = temp.next;
