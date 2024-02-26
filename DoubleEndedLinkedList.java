@@ -1,36 +1,44 @@
-public class DoubleEndedLinkedList {
-    private DoublyLinkedListNode head;
-    private DoublyLinkedListNode tail;
-    public void insertLast(int value){
-        DoublyLinkedListNode newNode = new DoublyLinkedListNode();
-        newNode.setData(value);
-        if (isEmpty()) {
-            head = newNode;
-            tail = newNode;
-        }else{
-            tail.next = newNode;
-            tail = newNode;
-        }
-    }
-    public DoublyLinkedListNode deleteLast(){
-        if (isEmpty()) {
-            return null;
-        }
-        DoublyLinkedListNode deletedNode = tail;
-        if (head == tail) {
-            head = null;
-            tail = null;
-        }else{
-            DoublyLinkedListNode pred = head;
-            while (pred.next != tail) {
-                pred = pred.next;
+    public class DoubleEndedLinkedList extends DoublyLinkedListNode{
+        private DoublyLinkedListNode head;
+        private DoublyLinkedListNode tail;
+        public void insertLast(int value){
+            DoublyLinkedListNode newNode = new DoublyLinkedListNode();
+            newNode.setData(value);
+            if (isEmpty()) {
+                head = newNode;
+                tail = newNode;
+            }else{
+                tail.next = newNode;
+                tail = newNode;
             }
-            pred.next = null;
-            tail = pred;
         }
-        return deletedNode;
+        public DoublyLinkedListNode deleteLast(){
+            if (isEmpty()) {
+                return null;
+            }
+            DoublyLinkedListNode deletedNode = tail;
+            if (head == tail) {
+                head = null;
+                tail = null;
+            }else{
+                DoublyLinkedListNode pred = head;
+                while (pred.next != tail) {
+                    pred = pred.next;
+                }
+                pred.next = null;
+                tail = pred;
+            }
+            return deletedNode;
+        }
+        private boolean isEmpty(){
+            return head == null;
+        }
+        public void printList() {
+            DoublyLinkedListNode temp = head;
+            while (temp != null) {
+                System.out.print(temp.getData() + " ");
+                temp = temp.next;
+            }
+            System.out.println(); 
+        }
     }
-    private boolean isEmpty(){
-        return head == null;
-    }
-}
