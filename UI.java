@@ -16,14 +16,14 @@ public class UI extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
 
-        // Create and configure text field
+   
         textField = new JTextField(20);
         textField.setFont(new Font("Arial", Font.PLAIN, 14));
         Border border = BorderFactory.createLineBorder(Color.BLACK);
         textField.setBorder(border);
 
-        // Center the text field using a layout manager
-        setLayout(new FlowLayout(FlowLayout.CENTER)); // Center alignment
+       
+        setLayout(new FlowLayout(FlowLayout.CENTER)); 
         add(textField);
         getContentPane().setBackground(Color.white);
         button = new JButton("ADD");
@@ -35,7 +35,7 @@ public class UI extends JFrame {
          }
         });
         add(button);
-        // Handle user input (optional)
+  
         textField.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
