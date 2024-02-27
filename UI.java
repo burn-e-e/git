@@ -35,7 +35,6 @@ public class UI extends JFrame {
          }
         });
         add(button);
-
         // Handle user input (optional)
         textField.addActionListener(new ActionListener() {
             @Override
